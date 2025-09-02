@@ -13,7 +13,7 @@
     --icons-fs: 1.4rem;
     --nav-fs: 1.1rem;
     --featured-title-fs: 4rem;
-    --featured-books-card-fs: 1.5rem;
+    --featured-books-card-fs: 1.2rem;
     --john-deo-fs: 0.8rem;
     --category-fs: 0.9rem;
     --old-price-fs: 0.8rem;
@@ -326,8 +326,9 @@ section {
         overflow-x: auto;
         scroll-behavior: smooth;
         overscroll-behavior-inline: contain;
-        gap: 2.5rem;
+        gap: 2.2rem;
         padding: 0 2rem 2rem;
+        max-width: 130rem;
 
         &::-webkit-scrollbar-thumb {
             background-color: var(--primary-blue);
@@ -351,12 +352,12 @@ section {
 
             &:hover {
                 border: 1px solid var(--primary-blue);
+                box-shadow: 1px 1px 5px var(--primary-blue);
             }
 
             .card-img {
-                width: 8rem;
-                margin-bottom: 0.5rem;
-                margin-top: 0.5rem;
+                width: 7.5rem;
+                margin: 0.6rem 2rem 0.5rem;
             }
 
             .featured-books {
@@ -370,9 +371,10 @@ section {
             }
 
             .category {
+                display: inline-block;
                 color: var(--primary-blue);
                 font-size: var(--category-fs);
-                padding: 0 1rem;
+                padding: 0 2rem;
                 margin-bottom: 0.3rem;
                 text-align: center;
             }
@@ -392,6 +394,10 @@ section {
                 font-size: var(--old-price-fs);
                 margin: -0.5rem 0 0.5rem 3.5rem;
                 text-decoration: line-through;
+            }
+
+            .learn-more {
+                margin-bottom: 0.6rem;
             }
 
         }
