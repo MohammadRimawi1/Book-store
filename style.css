@@ -90,10 +90,27 @@ section {
         display: flex;
         align-items: center;
         gap: 1rem;
-
+        
         .nav-links {
+            position: relative;
             font-size: var(--nav-fs);
-            color: var(--text-gray);
+            color: var(--netural-black);
+            
+            &::before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: -6px;
+                width: 0;
+                height: 2px;
+                background: var(--primary-blue);
+                transition: 0.3s;
+            }
+
+            &:hover::before {
+                width: 100%;
+                left: 0;
+            }
         }
     }
 
@@ -101,6 +118,10 @@ section {
         font-size: var(--icons-fs);
         font-weight: 900;
         cursor: pointer;
+
+        & i:hover {
+            color: var(--primary-blue);
+        }
     }
 
     .hamburger {
