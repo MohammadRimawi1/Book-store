@@ -562,6 +562,24 @@ section {
         .blog-card {
             box-shadow: 1px 1px 5px var(--text-gray);
 
+            &:hover {
+                background: var(--primary-blue);
+                box-shadow: 0 0 4px 1px #0ab6bc;
+
+                .bloger {
+                    color: var(--netural-white);
+                }
+
+                .blog-paragraph {
+                    color: var(--netural-white);
+                }
+
+                .bxs-calendar,
+                .blog-icons i:nth-child(2) {
+                    color: var(--netural-white);
+                }
+            }
+
             .card-img-blog {
                 width: 27rem;
                 height: 18rem;
@@ -580,8 +598,9 @@ section {
 
             .blog-paragraph {
                 max-width: 25rem;
-                margin-bottom: 0.5rem;
+                margin-bottom: 1rem;
                 text-align: justify;
+                line-height: 1.3;
             }
 
             .blog-icons {
