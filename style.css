@@ -49,6 +49,11 @@ section {
     gap: 3rem;
 }
 
+.section-title {
+        font-size: var(--featured-title-fs);
+        color: var(--netural-black);
+    }
+
 .learn-more {
     background: transparent;
     border: 2px solid var(--primary-blue);
@@ -313,11 +318,6 @@ section {
 
 /* ---------- FEATURED DESIGN ---------- */
 .featured {
-
-    .section-title {
-        font-size: var(--featured-title-fs);
-        color: var(--netural-black);
-    }
 
     .cards-container {
         display: grid;
