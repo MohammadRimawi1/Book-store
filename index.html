@@ -25,18 +25,38 @@
         </nav>
 
         <div class="icons">
-            <i class="bx bx-search"></i>
-            <i class='bx bxs-palette'></i>
-            <i class="bx bx-adjust"></i>
+            <div class="search-wrapper">
+                <input type="text" class="" id="searchInput" placeholder="Search">
+                <i class="bx bx-search" id="searchIcon"></i>
+            </div>
+
+            <div class="palette-wrapper">
+                <i class="bx bxs-palette" id="colorIcon"></i>
+                <input type="color" id="colorPicker">
+            </div>
+
+            <i class="bx bx-adjust" id="theme"></i>
         </div>
 
-        <div class="hamburger">
+        <div class="hamburger" id="hamburger">
             <i class="bx bx-menu"></i>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <i class="bx bx-x" id="closeMenu"></i>
+            <nav class="mobile-navbar">
+                <a class="nav-links" href="#home">Home</a>
+                <a class="nav-links" href="#about">About</a>
+                <a class="nav-links" href="#featured">Featured</a>
+                <a class="nav-links" href="#arrivals">Arrivals</a>
+                <a class="nav-links" href="#reviews">Reviews</a>
+                <a class="nav-links" href="#blog">Blog</a>
+            </nav>
         </div>
     </header>
 
     <!-- HERO SECTION -->
-    <div class="hero" id="home">
+    <!-- <div class="hero" id="home">
         <div class="welcome">
             <h1>
                 WELCOME TO <br />
@@ -89,10 +109,10 @@
             <h3>Secure Payment</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </div>
-    </div>
+    </div> -->
 
     <!-- ABOUT SECTION -->
-    <div class="about-us" id="about">
+    <!-- <div class="about-us" id="about">
         <div class="about-img">
             <img src="assets/image/reading.png" alt="Reading Books" />
         </div>
@@ -112,7 +132,7 @@
             <br />
             <a href="#" class="btn">Learn More</a>
         </div>
-    </div>
+    </div> -->
 
     <!-- FEATURED SECTION -->
     <section class="featured section" id="featured">
@@ -520,7 +540,7 @@
     </section>
 
     <!-- REVIEWS SECTION -->
-    <div class="reviews-section" id="reviews">
+    <!-- <div class="reviews-section" id="reviews">
         <h2 class="section-title">Reviews</h2>
 
         <div class="reviews">
@@ -598,7 +618,7 @@
             </p>
             <a href="#" class="btn">Learn More</a>
         </div>
-    </div>
+    </div> -->
 
     <!-- BLOG SECTION -->
     <section class="blog section" id="blog">
@@ -662,7 +682,7 @@
     </section>
 
     <!-- FOOTER SECTION -->
-    <footer class="footer">
+    <!-- <footer class="footer">
         <div class="footer-container">
             <div class="footer-col">
                 <img src="assets/image/openbook.jpg" alt="Logo" class="footer-logo" />
@@ -715,7 +735,9 @@
                 <span style="color: lightseagreen">WT Master Code</span>
             </p>
         </div>
-    </footer>
+    </footer> -->
+
+    <script src="script.js"></script>
 </body>
 
 </html>
