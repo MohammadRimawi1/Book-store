@@ -8,6 +8,8 @@
     --netural-black: #000000;
     --netural-white: #ffffff;
     --featured-cards-name: #a1aabd;
+    --dark-theme: #191d20;
+    --titles-dark-theme: #ffffff;
 
     /* FONT SIZE */
     --icons-fs: 1.4rem;
@@ -37,6 +39,21 @@ html {
     overflow-x: hidden;
 }
 
+body {
+    background: var(--netural-white);
+}
+
+.dark-theme {
+    background: var(--dark-theme);
+
+    --primary-blue: #089da1;
+    --text-gray: var(--titles-dark-theme);
+    --netural-black: var(--titles-dark-theme);
+    --netural-white: var(--dark-theme);
+    --featured-cards-name: var(--titles-dark-theme);
+
+}
+
 section {
     min-height: 80vh;
     padding: 10rem 7% 2rem;
@@ -62,6 +79,7 @@ section {
     cursor: pointer;
     transition: 0.3s ease;
     margin-bottom: 0.5rem;
+    color: var(--netural-black);
 
     &:hover {
         background: var(--primary-blue);
@@ -120,17 +138,104 @@ section {
     }
 
     .icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
         font-size: var(--icons-fs);
+        color: var(--netural-black);
         font-weight: 900;
         cursor: pointer;
 
         & i:hover {
             color: var(--primary-blue);
         }
+
+        .search-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        #searchInput {
+            display: none;
+            border: 1px solid var(--netural-black);
+            border-radius: 10px;
+            width: 15rem;
+            height: 2rem;
+            font-size: 1rem;
+        }
+
+        #searchInput.active {
+            display: block;
+        }
+
+        .palette-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        #colorPicker {
+            position: absolute;
+            display: none;
+            top: 120%;
+            right: 0;
+            cursor: pointer;
+        }
+
+        #colorPicker.active {
+            display: block;
+        }
     }
 
     .hamburger {
         display: none;
+        color: var(--netural-black);
+    }
+
+    .mobile-menu {
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        z-index: 200;
+        transition: 0.3s ease;
+
+        &.active {
+            display: flex;
+        }
+
+        .mobile-navbar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            text-align: center;
+
+            .nav-links {
+                font-size: 2rem;
+                color: var(--netural-black);
+                text-decoration: none;
+            }
+        }
+
+        #closeMenu {
+            position: absolute;
+            top: 25rem;
+            right: 18.5rem;
+            font-size: 3.5rem;
+            color: var(--netural-black);
+            cursor: pointer;
+        }
     }
 }
 
@@ -442,6 +547,7 @@ section {
                 font-size: 1rem;
                 font-weight: 500;
                 margin-bottom: 0.3rem;
+                color: var(--netural-black);
             }
 
             .stars {
@@ -564,7 +670,7 @@ section {
 
             &:hover {
                 background: var(--primary-blue);
-                box-shadow: 0 0 4px 1px #0ab6bc;
+                box-shadow: 0 0 4px 1px var(--primary-blue);
 
                 .bloger {
                     color: var(--netural-white);
@@ -601,6 +707,7 @@ section {
                 margin-bottom: 1rem;
                 text-align: justify;
                 line-height: 1.3;
+                color: var(--netural-black);
             }
 
             .blog-icons {
