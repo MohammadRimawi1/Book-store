@@ -50,9 +50,9 @@ section {
 }
 
 .section-title {
-        font-size: var(--featured-title-fs);
-        color: var(--netural-black);
-    }
+    font-size: var(--featured-title-fs);
+    color: var(--netural-black);
+}
 
 .learn-more {
     background: transparent;
@@ -95,12 +95,12 @@ section {
         display: flex;
         align-items: center;
         gap: 1rem;
-        
+
         .nav-links {
             position: relative;
             font-size: var(--nav-fs);
             color: var(--netural-black);
-            
+
             &::before {
                 content: '';
                 position: absolute;
@@ -733,3 +733,119 @@ section {
 }
 
 /* ---------- MEDIA QURIES ---------- */
+/* IPAD PRO QUERIES */
+@media(max-width: 1025px) {
+    :root {
+        --featured-title-fs: 3.5rem;
+    }
+
+    .featured {
+        .cards-container {
+            grid-auto-columns: minmax(120px, 40%);
+            gap: 1.5rem;
+            max-width: 80rem;
+        }
+    }
+
+    .arrivals {
+        .arrival-container {
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 3rem;
+
+            &> :last-child:nth-child(3n + 1) {
+                grid-column: 2;
+            }
+
+            .arrival-card {
+
+                .card-img-arrival {
+                    width: 7rem;
+                }
+
+                .arrival-btn {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+
+    .blog {
+        .blog-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 4.5rem;
+            row-gap: 1.5rem;
+
+            &> :nth-child(3) {
+                grid-column: 1 / -1;
+                justify-self: center;
+            }
+        }
+    }
+}
+
+@media(max-width: 415px) {
+
+    :root {
+        --featured-title-fs: 2.5rem;
+    }
+
+    section {
+        min-height: 0;
+    }
+
+    .header {
+
+        .navbar {
+            display: none;
+        }
+
+        .logo {
+            width: 5rem;
+        }
+
+        .hamburger {
+            display: block;
+            font-size: var(--icons-fs);
+            font-size: 2rem;
+            font-weight: 900;
+        }
+    }
+
+    .featured {
+        .cards-container {
+            max-width: 20rem;
+        }
+    }
+
+    .arrivals {
+        padding-top: 5rem;
+
+        .arrival-container {
+            grid-template-columns: 1fr;
+            column-gap: 0;
+
+            &> :last-child:nth-child(3n + 1) {
+                grid-column: auto;
+            }
+
+            .arrival-card {
+                padding: 0.3rem 1.5rem;
+
+                .card-img-arrival {
+                    width: 10rem;
+                }
+            }
+        }
+    }
+
+    .blog {
+        .blog-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            column-gap: 0;
+            row-gap: 1.5rem;
+        }
+    }
+
+}
