@@ -334,7 +334,7 @@ section {
 
     i {
       font-size: 4rem;
-      color: lightseagreen;
+      color: var(--primary-blue);
       margin-bottom: 1.5rem;
     }
 
@@ -603,7 +603,7 @@ section {
 }
 
 .digital-book .btn {
-  background-color: lightseagreen;
+  background-color: var(--primary-blue);
   color: white;
   padding: 1.5rem 3rem;
   font-size: 1.4rem;
@@ -621,6 +621,7 @@ section {
 }
 
 /*
+pre- photo realization:
 .digital-book {
   height: 40rem;
   display: flex;
@@ -754,7 +755,7 @@ section {
             transition: 0.3s;
 
             &:hover {
-              color: lightseagreen;
+              color: var(--primary-blue);
             }
           }
         }
@@ -766,14 +767,14 @@ section {
 
       i {
         margin-right: 0.8rem;
-        color: lightseagreen;
+        color: var(--primary-blue);
       }
 
       .social-icons {
         a {
           margin-right: 1rem;
           font-size: 2.2rem;
-          color: lightseagreen;
+          color: var(--primary-blue);
           transition: 0.3s;
 
           &:hover {
@@ -800,7 +801,7 @@ section {
           padding: 0.8rem 1.5rem;
           border: none;
           border-radius: 2rem;
-          background: lightseagreen;
+          background: var(--primary-blue);
           color: white;
           margin-left: 0.5rem;
           cursor: pointer;
@@ -821,7 +822,7 @@ section {
     color: #333;
 
     .brand {
-      color: lightseagreen;
+      color: var(--primary-blue);
       font-weight: bold;
     }
   }
@@ -1023,9 +1024,9 @@ IPHONE XR
   }
 
   .digital-book .btn {
-    margin-top: 12rem;
-    margin-left: 2rem;
-    font-size: 1rem;
+    margin-top: 6rem;
+    margin-left: -2rem;
+    font-size: 0.8rem;
     padding: 0.8rem 1.5rem;
   }
 }
