@@ -10,6 +10,7 @@
     --featured-cards-name: #a1aabd;
     --dark-theme: #191d20;
     --titles-dark-theme: #ffffff;
+    --hero-overlay: rgba(255, 255, 255, 0.9);
 
     /* FONT SIZE */
     --icons-fs: 1.4rem;
@@ -51,7 +52,6 @@ body {
     --netural-black: var(--titles-dark-theme);
     --netural-white: var(--dark-theme);
     --featured-cards-name: var(--titles-dark-theme);
-
 }
 
 section {
@@ -120,7 +120,7 @@ section {
             color: var(--netural-black);
 
             &::before {
-                content: '';
+                content: "";
                 position: absolute;
                 left: 50%;
                 bottom: -6px;
@@ -194,7 +194,6 @@ section {
     }
 
     .mobile-menu {
-
         position: fixed;
         top: 0;
         left: 0;
@@ -250,32 +249,40 @@ section {
     background-position: center;
     background-repeat: no-repeat;
 
-    padding: 12rem 7% 2rem;
+    padding: 8rem 7% 2rem;
 
     &::before {
         content: "";
         position: absolute;
         inset: 0;
-        background: #fff;
-        opacity: 0.88;
+        background: var(--hero-overlay);
         z-index: 0;
+    }
+
+    .dark-theme &::before {
+        background: none;
     }
 
     .welcome {
         position: relative;
         z-index: 1;
         width: 50%;
-        padding: 50px;
+        padding: 5rem;
 
         h1 {
-            font-size: 40px;
+            font-size: 4rem;
             font-weight: bold;
+            color: var(--netural-black);
+        }
+
+        h1 span {
+            color: var(--primary-blue);
         }
 
         p {
-            margin: 20px 0;
+            margin: 2rem 0;
             line-height: 1.5;
-            color: #333;
+            color: var(--netural-black);
         }
     }
 
@@ -285,43 +292,10 @@ section {
         width: 50%;
         text-align: center;
 
-        .shelf {
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            position: relative;
-
-            img {
-                width: 100%;
-                max-width: 140px;
-                margin: 0 -20px;
-                position: relative;
-                transition: transform 0.3s;
-                z-index: 1;
-
-                &:nth-child(3) {
-                    width: 100%;
-                    max-width: 220px;
-                    transform: translateY(-20px);
-                    z-index: 5;
-                }
-
-                &:nth-child(2),
-                &:nth-child(4) {
-                    z-index: 4;
-                }
-
-                &:nth-child(1),
-                &:nth-child(5) {
-                    z-index: 3;
-                }
-            }
-        }
-
         .shelf-img {
-            margin-top: -40px;
+            margin-top: -2rem;
             width: 100%;
-            max-width: 80%;
+            max-width: 280rem;
             z-index: 0;
             position: relative;
         }
@@ -330,51 +304,57 @@ section {
 
 .btn {
     display: inline-block;
-    background-color: lightseagreen;
+    background-color: var(--primary-blue);
     color: white;
-    padding: 10px 20px;
+    padding: 1rem 2rem;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 0.4rem;
     font-weight: bold;
     transition: 0.3s;
 
     &:hover {
-        background-color: teal;
+        background-color: var(--primary-blue);
     }
 }
 
+/* ---------- PROPERTIES DESIGN ---------- */
 .properties {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px auto;
-    padding: 20px;
-    gap: 20px;
+    margin: 0;
+    padding: 2rem 0;
+    gap: 2rem;
 
     .card {
-        background: #fff;
-        border: 5px solid rgba(32, 178, 170, 0.2);
-        border-radius: 8px;
-        padding: 20px;
+        background: var(--netural-white);
+        border: 0.5rem solid rgba(32, 178, 170, 0.2);
+        border-radius: 0.8rem;
+        padding: 2rem;
         width: 100%;
-        max-width: 320px;
+        max-width: 32rem;
         text-align: center;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
         transition: 0.3s;
 
         &:hover {
             transform: translateY(-5px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
         }
 
         i {
-            font-size: 40px;
-            color: lightseagreen;
-            margin-bottom: 15px;
+            font-size: 4rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
         }
 
         h3 {
-            margin: 10px 0;
+            margin: 1rem 0;
+            color: var(--netural-black);
+        }
+
+        p {
+            color: var(--netural-black);
         }
     }
 }
@@ -384,10 +364,11 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 50px;
+    padding: 2rem 5rem 5rem;
 
+    /* margin-top: -20rem; to lessen the space, but it ruins in the responsive part */
     .about-img {
-        width: 50%;
+        width: 60rem;
         text-align: center;
 
         img {
@@ -398,21 +379,22 @@ section {
 
     .about-text {
         width: 50%;
-        padding: 20px;
+        padding: 2rem;
 
         h2 {
-            font-size: 42px;
-            margin-bottom: 20px;
+            font-size: 4.2rem;
+            margin-bottom: 2rem;
+            color: var(--netural-black);
         }
 
         p {
             line-height: 1.6;
-            color: #333;
-            margin-bottom: 20px;
+            color: var(--netural-black);
+            margin-bottom: 2rem;
         }
 
         .btn {
-            background-color: lightseagreen;
+            background-color: var(--primary-blue);
 
             &:hover {
                 background-color: teal;
@@ -423,7 +405,6 @@ section {
 
 /* ---------- FEATURED DESIGN ---------- */
 .featured {
-
     .cards-container {
         display: grid;
         grid-auto-flow: column;
@@ -489,6 +470,7 @@ section {
                 flex-direction: column;
                 align-items: flex-start;
                 line-height: 1.2;
+                color: var(--netural-black);
             }
 
             .new-price {
@@ -504,14 +486,12 @@ section {
             .learn-more {
                 margin-bottom: 0.6rem;
             }
-
         }
     }
 }
 
 /* ---------- ARRIVALS DESIGN ---------- */
 .arrivals {
-
     .arrival-container {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
@@ -563,18 +543,16 @@ section {
                 font-size: 0.9rem;
             }
         }
-
     }
-
 }
 
 /* ---------- REVIEWS DESIGN ---------- */
 .reviews-section {
     .section-title {
         text-align: center;
-        font-size: 52px;
+        font-size: 5.2rem;
         font-weight: bold;
-        margin-bottom: 30px;
+        margin-bottom: 3rem;
     }
 
     .reviews {
@@ -582,25 +560,25 @@ section {
         justify-content: center;
         align-items: stretch;
         flex-wrap: wrap;
-        gap: 20px;
-        margin: 50px auto;
-        padding: 20px;
+        gap: 2rem;
+        margin: 5rem auto;
+        padding: 2rem;
 
         .review-card {
-            background: #fff;
-            border: 1px solid lightseagreen;
-            border-radius: 8px;
-            padding: 20px;
+            background: var(--netural-white);
+            border: 0.1rem solid var(--primary-blue);
+            border-radius: 0.8rem;
+            padding: 2rem;
             width: 100%;
-            max-width: 300px;
+            max-width: 30rem;
             text-align: left;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05);
             transition: 0.3s;
             position: relative;
 
             &:hover {
                 transform: translateY(-5px);
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
             }
 
             img {
@@ -608,25 +586,26 @@ section {
                 aspect-ratio: 1 / 1;
                 border-radius: 50%;
                 object-fit: cover;
-                margin-bottom: 15px;
+                margin-bottom: 1.5rem;
             }
 
             h3 {
-                margin: 10px 0;
+                margin: 1rem 0;
+                color: var(--netural-black);
             }
 
             p {
-                font-size: 14px;
-                color: #555;
+                font-size: 1.4rem;
+                color: var(--netural-black);
                 line-height: 1.5;
             }
 
             .stars {
-                margin-top: 10px;
-                color: lightseagreen;
+                margin-top: 1rem;
+                color: var(--primary-blue);
 
                 i {
-                    margin: 0 2px;
+                    margin: 0 0.2rem;
                 }
             }
         }
@@ -634,32 +613,34 @@ section {
 }
 
 .digital-book {
-    height: 400px;
+    height: 40rem;
     display: flex;
     align-items: center;
-    padding: 50px;
-    background: url("assets/image/digital.png") no-repeat center center/cover;
-    color: black;
+    padding-left: 5rem;
+    background: url("assets/image/banner.jpg") no-repeat center center/cover;
+    position: relative;
+}
 
-    .overlay-text {
-        width: 100%;
-        max-width: 500px;
+.digital-book .btn {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 1.5rem 3rem;
+    font-size: 1.4rem;
+    border-radius: 0.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    display: block;
+    margin-top: 20rem;
+    margin-left: 8rem;
+}
 
-        h2 {
-            font-size: 40px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        p {
-            margin-bottom: 20px;
-        }
-    }
+.digital-book .btn:hover {
+    background-color: teal;
 }
 
 /* ---------- BLOG DESIGN ---------- */
 .blog {
-
     .blog-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -726,32 +707,32 @@ section {
 
 /* ---------- FOOTER DESIGN ---------- */
 .footer {
-    background: #f5f5f5;
-    color: #333;
-    padding: 50px 20px;
+    background: var(--netural-white);
+    color: var(--netural-black);
+    padding: 5rem 2rem;
 
     .footer-container {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
         flex-wrap: nowrap;
-        max-width: 1200px;
+        max-width: 120rem;
         margin: auto;
 
         .footer-col {
             flex: 1;
-            min-width: 220px;
-            margin: 20px;
+            min-width: 22rem;
+            margin: 2rem;
 
             .footer-logo {
                 width: 100%;
-                max-width: 150px;
-                margin-bottom: 15px;
+                max-width: 15rem;
+                margin-bottom: 1.5rem;
             }
 
             h4 {
-                margin-bottom: 15px;
-                color: #000;
+                margin-bottom: 1.5rem;
+                color: var(--netural-black);
             }
 
             ul {
@@ -759,34 +740,34 @@ section {
                 padding: 0;
 
                 li {
-                    margin: 8px 0;
+                    margin: 0.8rem 0;
 
                     a {
-                        color: #333;
+                        color: var(--netural-black);
                         text-decoration: none;
                         transition: 0.3s;
 
                         &:hover {
-                            color: lightseagreen;
+                            color: var(--primary-blue);
                         }
                     }
                 }
             }
 
             p {
-                margin: 8px 0;
+                margin: 0.8rem 0;
             }
 
             i {
-                margin-right: 8px;
-                color: lightseagreen;
+                margin-right: 0.8rem;
+                color: var(--primary-blue);
             }
 
             .social-icons {
                 a {
-                    margin-right: 10px;
-                    font-size: 22px;
-                    color: lightseagreen;
+                    margin-right: 1rem;
+                    font-size: 2.2rem;
+                    color: var(--primary-blue);
                     transition: 0.3s;
 
                     &:hover {
@@ -796,25 +777,26 @@ section {
             }
 
             .newsletter {
-                margin-top: 10px;
+                margin-top: 1rem;
 
                 input {
-                    padding: 8px;
-                    border-radius: 20px;
-                    border: 1px solid #ccc;
+                    padding: 0.8rem;
+                    margin-bottom: 1rem;
+                    border-radius: 2rem;
+                    border: 0.1rem solid #ccc;
                     width: 100%;
-                    max-width: 250px;
+                    max-width: 25rem;
                     outline: none;
                     background-color: lightgray;
                 }
 
                 button {
-                    padding: 8px 15px;
+                    padding: 0.8rem 1.5rem;
                     border: none;
-                    border-radius: 20px;
-                    background: lightseagreen;
+                    border-radius: 2rem;
+                    background: var(--primary-blue);
                     color: white;
-                    margin-left: 5px;
+                    margin-left: 0.5rem;
                     cursor: pointer;
                     transition: 0.3s;
 
@@ -828,12 +810,12 @@ section {
 
     .footer-bottom {
         text-align: center;
-        margin-top: 20px;
-        font-size: 14px;
+        margin-top: 2rem;
+        font-size: 1.4rem;
         color: #333;
 
         .brand {
-            color: lightseagreen;
+            color: var(--primary-blue);
             font-weight: bold;
         }
     }
@@ -841,14 +823,14 @@ section {
 
 /* ---------- MEDIA QURIES ---------- */
 /* IPAD PRO QUERIES */
-@media(max-width: 1025px) {
+@media (max-width: 102.5rem) {
     :root {
         --featured-title-fs: 3.5rem;
     }
 
     .featured {
         .cards-container {
-            grid-auto-columns: minmax(120px, 40%);
+            grid-auto-columns: minmax(12rem, 40%);
             gap: 1.5rem;
             max-width: 80rem;
         }
@@ -864,7 +846,6 @@ section {
             }
 
             .arrival-card {
-
                 .card-img-arrival {
                     width: 7rem;
                 }
@@ -891,8 +872,7 @@ section {
     }
 }
 
-@media(max-width: 415px) {
-
+@media (max-width: 415px) {
     :root {
         --featured-title-fs: 2.5rem;
     }
@@ -902,7 +882,6 @@ section {
     }
 
     .header {
-
         .navbar {
             display: none;
         }
@@ -954,5 +933,102 @@ section {
             row-gap: 1.5rem;
         }
     }
+}
 
+/*
+IPAD PRO
+*/
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero .welcome,
+    .hero .books {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .properties {
+        flex-wrap: wrap;
+    }
+
+    .about-us {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        gap: 4rem;
+    }
+
+    .about-us .about-img,
+    .about-us .about-text {
+        width: 100%;
+    }
+
+    .about-us .about-img img {
+        width: 50rem;
+    }
+
+    .reviews .review-card {
+        max-width: 45%;
+    }
+
+    .digital-book {
+        height: 25rem;
+        background-size: contain;
+        background-position: center;
+    }
+
+    .digital-book .btn {
+        margin-top: 15rem;
+        margin-left: 3rem;
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+    }
+
+    .footer .footer-container {
+        flex-wrap: wrap;
+        /* to go downwards */
+    }
+
+    .footer .footer-col {
+        flex: 1 1 45%;
+        min-width: 22rem;
+    }
+}
+
+/*
+IPHONE XR
+*/
+@media (max-width: 415px) {
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .properties {
+        flex-direction: column;
+    }
+
+    .reviews .review-card {
+        max-width: 100%;
+    }
+
+    .footer .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .digital-book {
+        height: 20rem;
+        background-size: contain;
+        background-position: center;
+    }
+
+    .digital-book .btn {
+        margin-top: 6rem;
+        margin-left: -2rem;
+        font-size: 0.8rem;
+        padding: 0.8rem 1.5rem;
+    }
 }
