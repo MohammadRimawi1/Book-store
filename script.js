@@ -15,10 +15,17 @@ colorPicker.addEventListener("input", (e) => {
 
 // ------ Themes ------:
 const themeToggling = document.getElementById("theme");
+const bgToggling = document.querySelector('.hero');
 
 themeToggling.addEventListener("click", () => {
     const body = document.querySelector("body");
     body.classList.toggle("dark-theme");
+
+    if (body.classList.contains("dark-theme")) {
+        bgToggling.style.backgroundImage = 'url("assets/image/bg.png")';
+    } else {
+        bgToggling.style.backgroundImage = 'url("assets/image/reading.png")';
+    }
 });
 
 // ------ Search Icon ------:
