@@ -38,6 +38,8 @@
 html {
     font-size: 62.5%;
     overflow-x: hidden;
+    scrollbar-color: var(--primary-blue) transparent;
+    scrollbar-width: thin;
 }
 
 body {
@@ -87,6 +89,17 @@ section {
         font-weight: 600;
         box-shadow: 1px 1px 5px var(--primary-blue);
     }
+}
+
+
+.outline {
+    stroke: var(--primary-blue);
+    fill: none;
+}
+
+.pages {
+    stroke: var(--primary-blue);
+    fill: none;
 }
 
 /* ---------- HEADER DESIGN ---------- */
@@ -328,18 +341,18 @@ section {
 
     .card {
         background: var(--netural-white);
-        border: 0.5rem solid rgba(32, 178, 170, 0.2);
+        border: 1.2px solid var(--primary-blue);
         border-radius: 0.8rem;
         padding: 2rem;
         width: 100%;
         max-width: 32rem;
         text-align: center;
-        box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0.2rem 0.5rem var(--primary-blue);
         transition: 0.3s;
 
         &:hover {
             transform: translateY(-5px);
-            box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0.4rem 1rem var(--primary-blue);
         }
 
         i {
@@ -612,31 +625,34 @@ section {
     }
 }
 
+/* ---------- DIGITAL DESIGN ---------- */
 .digital-book {
-    height: 40rem;
-    display: flex;
-    align-items: center;
-    padding-left: 5rem;
-    background: url("assets/image/banner.jpg") no-repeat center center/cover;
     position: relative;
-}
+    
+    .digital-img {
+        width: 100%;
+        height: 25rem;
+        object-fit: cover;
+    }
 
-.digital-book .btn {
-    background-color: var(--primary-blue);
-    color: white;
-    padding: 1.5rem 3rem;
-    font-size: 1.4rem;
-    border-radius: 0.4rem;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.3s;
-    display: block;
-    margin-top: 20rem;
-    margin-left: 8rem;
-}
+    .digital-content {
+        position: absolute;
+        top: 5rem;
+        left: 10rem;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 0.5rem;
+        max-width: 50rem;
 
-.digital-book .btn:hover {
-    background-color: teal;
+        .digital {
+            font-size: 6rem;
+        }
+
+        .digital-paragrapgh {
+            font-weight: 500;
+        }
+    }
 }
 
 /* ---------- BLOG DESIGN ---------- */
@@ -812,11 +828,14 @@ section {
         text-align: center;
         margin-top: 2rem;
         font-size: 1.4rem;
-        color: #333;
+        color: var(--netural-black);
 
-        .brand {
-            color: var(--primary-blue);
-            font-weight: bold;
+        .designed-by {
+            color: var(--netural-black);
+
+            .smile {
+                color: var(--primary-blue);
+            }
         }
     }
 }
@@ -933,6 +952,26 @@ section {
             row-gap: 1.5rem;
         }
     }
+
+    .digital-book {
+        .digital-content {
+            align-items: center;
+            left: 1rem;
+
+            .digital {
+                font-size: 3.5rem;
+            }
+            
+            .digital-paragrapgh {
+                
+            }
+
+            & .btn {
+                margin-top:0.5rem;
+            }
+            
+        }
+    }
 }
 
 /*
@@ -989,7 +1028,6 @@ IPAD PRO
 
     .footer .footer-container {
         flex-wrap: wrap;
-        /* to go downwards */
     }
 
     .footer .footer-col {
@@ -1013,9 +1051,10 @@ IPHONE XR
     .reviews .review-card {
         max-width: 100%;
     }
-
+    
     .footer .footer-container {
         flex-direction: column;
+        align-items: center;
         text-align: center;
     }
 

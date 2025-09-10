@@ -11,6 +11,10 @@ colorPicker.addEventListener("input", (e) => {
     const body = document.querySelector("body");
 
     body.style.setProperty("--primary-blue", newColor);
+    document.documentElement.style.setProperty(
+        "scrollbar-color",
+        `${newColor} transparent`
+    );
 });
 
 // ------ Themes ------:
